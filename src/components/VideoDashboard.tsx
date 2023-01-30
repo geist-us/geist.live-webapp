@@ -407,7 +407,22 @@ const Dashboard = ({ data, recent, error, loading }: any) => {
 
     <ThreeColumnLayout>
       <div className="col-span-12 lg:col-span-6 min-h-screen">
-      <div id="tokenmeet-video-container"></div>
+      {rexie && (
+        <div id="tokenmeet-video-container"></div>
+      )}
+      {typeof rexie === 'undefined' && (
+        <div className="px-4 mt-2">
+          <div className="flex my-6">
+            <div className="flex">
+              <p>Checking your wallet for Rexie NFT....</p>
+            </div>
+          </div>
+        </div>
+      )}
+      {!rexie && typeof rexie !== 'undefined' && (
+        <p><button className="button button-lg">< a target="_blank" href="https://relayx.com/market/12d8ca4bc0eaf26660627cc1671de6a0047246f39f3aa06633f8204223d70cc5_o2">Rexie Token Holders Only!! Buy one here </a></button></p>
+      )}
+      
 
         <div className="hidden lg:block mt-8">
           {/*<MemeDropzone/>*/}
@@ -460,7 +475,10 @@ const Dashboard = ({ data, recent, error, loading }: any) => {
         <div className="w-full">
           <div className="relative">
 
-          <div id="tokenmeet-video-container"></div>
+          {!rexie && (
+            <div id="tokenmeet-video-container"></div>
+          )}
+          
 
 
             {/* <InfiniteScroll
