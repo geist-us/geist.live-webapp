@@ -420,7 +420,7 @@ const Dashboard = ({ data, recent, error, loading }: any) => {
         </div>
       )}
       {!rexie && typeof rexie !== 'undefined' && (
-        <p><button className="button button-lg">< a target="_blank" href="https://relayx.com/market/12d8ca4bc0eaf26660627cc1671de6a0047246f39f3aa06633f8204223d70cc5_o2">Rexie Token Holders Only!! Buy one here </a></button></p>
+        <p><button className="button button-lg">< a target="_blank" rel="noreferrer" href="https://relayx.com/market/12d8ca4bc0eaf26660627cc1671de6a0047246f39f3aa06633f8204223d70cc5_o2">Rexie Token Holders Only!! Buy one here </a></button></p>
       )}
       
 
