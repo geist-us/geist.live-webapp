@@ -99,8 +99,6 @@ function ago(period: any) {
   return moment().subtract(1, period).unix() * 1000;
 }
 
-const rexieContract = '12d8ca4bc0eaf26660627cc1671de6a0047246f39f3aa06633f8204223d70cc5_o2'
-
 //import { JitsiMeeting } from '@jitsi/react-sdk';
 import Script from 'next/script';
 
@@ -170,7 +168,7 @@ const events = [
 
 import { sendMessage } from '../utils/bsocial/message'
 
-import { checkForRexie } from "src/utils/relayx";
+import { checkForGeistMembership, geistToken } from "src/utils/relayx";
 
 const Dashboard = ({ data, recent, error, loading }: any) => {
   const router = useRouter();
@@ -191,17 +189,17 @@ const Dashboard = ({ data, recent, error, loading }: any) => {
 
   const [jitsiJWT, setJitsiJWT] = useState()
 
-  const [rexie, setRexie] = useState<boolean>()
+  const [accessNFT, setAccessNFT] = useState<boolean>()
 
   useEffect(() => {
 
     if (!paymail) { return }
 
-    checkForRexie(paymail).then(setRexie)
+    checkForGeistMembership(paymail).then(setAccessNFT)
 
-  }, [paymail])
+  }, [paymail, authenticated])
 
-  const roomName = `vpaas-magic-cookie-30f799d005ea4007aaa7afbf1a14cdcf/${rexieContract}`
+  const roomName = `vpaas-magic-cookie-30f799d005ea4007aaa7afbf1a14cdcf/${geistToken}`
 
   console.log({ relayToken, paymail })
 
@@ -280,7 +278,7 @@ const Dashboard = ({ data, recent, error, loading }: any) => {
               wallet: 'relay',
               paymail: user?.paymail || paymail,
               token: relayToken,              
-              tokenOrigin: rexieContract
+              tokenOrigin: geistToken
           })
           .then(({data}) => {
 
@@ -373,7 +371,7 @@ const Dashboard = ({ data, recent, error, loading }: any) => {
       console.log('--end use effect--', {nJitsis})
 
   
-  }, [root.JitsiMeetExternalAPI, jitsiJWT, authenticated])
+  }, [root.JitsiMeetExternalAPI, jitsiJWT, authenticated, accessNFT])
 
 
   const handleChangeTab = (tag: string) => {
@@ -407,20 +405,20 @@ const Dashboard = ({ data, recent, error, loading }: any) => {
 
     <ThreeColumnLayout>
       <div className="col-span-12 lg:col-span-6 min-h-screen">
-      {rexie && (
+      {accessNFT && (
         <div id="tokenmeet-video-container"></div>
       )}
-      {typeof rexie === 'undefined' && (
+      {typeof accessNFT === 'undefined' && (
         <div className="px-4 mt-2">
           <div className="flex my-6">
             <div className="flex">
-              <p>Checking your wallet for Rexie NFT....</p>
+              <p>Checking your wallet for Geist Membership Card NFT....</p>
             </div>
           </div>
         </div>
       )}
-      {!rexie && typeof rexie !== 'undefined' && (
-        <p><button className="button button-lg">< a target="_blank" rel="noreferrer" href="https://relayx.com/market/12d8ca4bc0eaf26660627cc1671de6a0047246f39f3aa06633f8204223d70cc5_o2">Rexie Token Holders Only!! Buy one here </a></button></p>
+      {!accessNFT && typeof accessNFT !== 'undefined' && (
+        <p><button className="button button-lg">< a target="_blank" rel="noreferrer" href={`https://relayx.com/market/${geistToken}`}>Geist Club Members Only!! Buy a card here</a></button></p>
       )}
       
 
@@ -475,7 +473,7 @@ const Dashboard = ({ data, recent, error, loading }: any) => {
         <div className="w-full">
           <div className="relative">
 
-          {!rexie && (
+          {!accessNFT && (
             <div id="tokenmeet-video-container"></div>
           )}
           

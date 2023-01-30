@@ -1,9 +1,9 @@
 
 import axios from 'axios'
 
-const rexieOrigin = '12d8ca4bc0eaf26660627cc1671de6a0047246f39f3aa06633f8204223d70cc5_o2'
+export const geistToken = '56f6c76cddb826c4dde3d7c8230317b48075960f4b329b3bd0a1f476c7b5c970_o2'
 
-export async function checkForRexie(paymail: string): Promise<boolean> {
+export async function checkForGeistMembership(paymail: string): Promise<boolean> {
 
     try {
 
@@ -11,15 +11,15 @@ export async function checkForRexie(paymail: string): Promise<boolean> {
 
         const { data: { data: { collectibles }} } = await axios.get(`https://staging-backend.relayx.com/api/user/balance2/${address}`)
     
-        const rexie = collectibles.filter((collectible: any) => collectible.origin === rexieOrigin)[0]
+        const geistToken = collectibles.filter((collectible: any) => collectible.origin === geistToken)[0]
 
-        console.debug('checkForRexie.result', rexie)
+        console.debug('checkForGeistMembership.result', geistToken)
 
-        return typeof rexie !== 'undefined'
+        return typeof geistToken !== 'undefined'
 
     } catch(error) {
 
-        console.error('checkForRexie.error', error)
+        console.error('checkForGeistMembership.error', error)
 
         return false
 
