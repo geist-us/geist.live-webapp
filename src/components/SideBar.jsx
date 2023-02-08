@@ -126,6 +126,14 @@ const SideBar = () => {
                     <div className='hidden xl:block text-base leading-4 grow'>Academy</div>
                 </div>
             </Link>*/}
+            <Link href="/collectibles">
+                <div className='mt-4 flex items-center cursor-pointer xl:px-5 rounded-md xl:rounded-none hover:transition-all hover:bg-gray-300 hover:dark:bg-gray-700 h-8 xl:h-[48px]'>
+                        <svg  className="h-6 w-6 xl:mr-2.5"  viewBox="0 0 20 20"  fill="white">
+							<path d="M15.94,10.179l-2.437-0.325l1.62-7.379c0.047-0.235-0.132-0.458-0.372-0.458H5.25c-0.241,0-0.42,0.223-0.373,0.458l1.634,7.376L4.06,10.179c-0.312,0.041-0.446,0.425-0.214,0.649l2.864,2.759l-0.724,3.947c-0.058,0.315,0.277,0.554,0.559,0.401l3.457-1.916l3.456,1.916c-0.419-0.238,0.56,0.439,0.56-0.401l-0.725-3.947l2.863-2.759C16.388,10.604,16.254,10.22,15.94,10.179M10.381,2.778h3.902l-1.536,6.977L12.036,9.66l-1.655-3.546V2.778z M5.717,2.778h3.903v3.335L7.965,9.66L7.268,9.753L5.717,2.778zM12.618,13.182c-0.092,0.088-0.134,0.217-0.11,0.343l0.615,3.356l-2.938-1.629c-0.057-0.03-0.122-0.048-0.184-0.048c-0.063,0-0.128,0.018-0.185,0.048l-2.938,1.629l0.616-3.356c0.022-0.126-0.019-0.255-0.11-0.343l-2.441-2.354l3.329-0.441c0.128-0.017,0.24-0.099,0.295-0.215l1.435-3.073l1.435,3.073c0.055,0.116,0.167,0.198,0.294,0.215l3.329,0.441L12.618,13.182z"></path>
+						</svg>
+                    <div className='hidden xl:block text-base leading-4 grow'>Collectibles</div>
+                </div>
+            </Link>
             <Link href="/features">
                 <div className='mt-4 flex items-center cursor-pointer xl:px-5 rounded-md xl:rounded-none hover:transition-all hover:bg-gray-300 hover:dark:bg-gray-700 h-8 xl:h-[48px]'>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 xl:mr-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
@@ -133,7 +141,7 @@ const SideBar = () => {
                     </svg>
                     <div className='hidden xl:block text-base leading-4 grow'>Features</div>
                 </div>
-            </Link> 
+            </Link>
             <Link href="/settings">
                 <div className='mt-4 flex items-center cursor-pointer xl:px-5 rounded-md xl:rounded-none hover:transition-all hover:bg-gray-300 hover:dark:bg-gray-700 h-8 xl:h-[48px]'>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 xl:mr-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
@@ -145,7 +153,7 @@ const SideBar = () => {
             </Link>
         </div>
         {authenticated && <Link href="/compose">
-            <button 
+            <button
                 className='-ml-24 hidden xl:flex text-sm leading-4 text-white font-semibold w-fit mt-4 mb-6 border-none rounded-md bg-gradient-to-tr from-blue-400 to-blue-500 cursor-pointer items-center text-center justify-center py-2 px-5 transition duration-500 transform hover:-translate-y-1'
             >
                 Create Post
@@ -158,12 +166,12 @@ const SideBar = () => {
             </svg>
         </div>
         <div onClick={toggleTheme} className=''>
-            <svg 
+            <svg
                 className={`cursor-pointer ${theme ==="dark" ? "fill-gray-500 hover:fill-gray-100":"fill-gray-500 hover:fill-gray-700"}`}
-                width="16" 
-                height="16" 
-                viewBox="0 0 19 19" 
-                fill="none" 
+                width="16"
+                height="16"
+                viewBox="0 0 19 19"
+                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
             >
                 <path d="M14.8976 12.8327C9.68779 12.8327 6.3558 9.58619 6.3558 4.39567C6.3558 3.32308 6.61581 1.79083 6.96249 0.995968C7.04916 0.775706 7.06842 0.641633 7.06842 0.545867C7.06842 0.287298 6.87582 0 6.50025 0C6.39432 0 6.1632 0.0287298 5.95134 0.105343C2.38824 1.52268 0 5.33417 0 9.34677C0 14.9778 4.31424 19 9.95743 19C14.108 19 17.6999 16.5005 18.8941 13.3785C18.9807 13.1583 19 12.9284 19 12.8422C19 12.4879 18.7015 12.2485 18.4318 12.2485C18.3066 12.2485 18.2007 12.2772 18.0177 12.3347C17.2762 12.5741 16.0821 12.8327 14.8976 12.8327Z">
