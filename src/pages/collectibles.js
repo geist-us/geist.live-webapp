@@ -11,8 +11,8 @@ export default function Collectibles() {
     "28b6e0569c6093f8a65962a2d9d66220d610594a5bc39c2021ace64a4bcd3dfe_o2",
   ];
 
-  const [totalMints, setTotalMints] = useState(0);
-  const [pages, setPages] = useState(0);
+  // const [totalMints, setTotalMints] = useState(0);
+  // const [pages, setPages] = useState(0);
   const [mintedCollections, setMintedCollections] = useState([]);
 
   // TODO: Refactor this to use a reducer
@@ -23,9 +23,12 @@ export default function Collectibles() {
         `https://staging-backend.relayx.com/api/profile/geist@relayx.io`
       );
 
-      setTotalMints(userProfile.data.data.minted);
-      setPages(Math.ceil(totalMints / 10));
-      console.log("pages are: ", pages, totalMints);
+      const totalMints = userProfile.data.data.minted;
+
+      const pages = Math.ceil(totalMints / 10);
+
+      const filteredGeistCollections = [];
+
       //Cycle through the pages and get the data
       for (let index = 1; index <= pages; index++) {
         const { data } = await axios.get(
@@ -36,14 +39,13 @@ export default function Collectibles() {
           (mint) => !misprints.includes(mint.location)
         );
         console.log("mintedCollections", mintedCollections);
-        setMintedCollections([...mintedCollections, ...filteredMints]);
+        filteredGeistCollections.push(...filteredMints);
         // console.log("mintedCollections", mintedCollections);
       }
-      return () => {
-        // this now gets called when the component unmounts
-      };
+
+      setMintedCollections([...mintedCollections, ...filteredGeistCollections]);
     })();
-  }, [pages, totalMints]);
+  }, []);
 
   return (
     <PanelLayout>
