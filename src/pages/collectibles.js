@@ -50,7 +50,7 @@ export default function Collectibles() {
   return (
     <PanelLayout>
       <p>Collectibles</p>
-      <div className="bg-red-500">
+      <div className="bg-red-200 flex flex-wrap">
         {mintedCollections?.map((mintedCollection) => (
           <NFTCard key={mintedCollection.location} nft={mintedCollection} />
         ))}
@@ -65,7 +65,7 @@ export default function Collectibles() {
 - remove false mints ✅
 - create NFTCard component ✅
 = Get user's collectibles ✅
-- display NFTs in a grid
+- display NFTs in a grid ✅
 - Show a sillhoute of the collectibles
 - if logged in, show which collectibles you have
 - show which ones you don't have as silhouettes
