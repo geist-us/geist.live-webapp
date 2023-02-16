@@ -64,6 +64,7 @@ export default function Collectibles() {
 - show collectibles in a list  ✅
 - remove false mints ✅
 - create NFTCard component ✅
+= Get user's collectibles ✅
 - display NFTs in a grid
 - Show a sillhoute of the collectibles
 - if logged in, show which collectibles you have

@@ -1,13 +1,20 @@
-import React from 'react'
+import React from "react";
+import Image from "next/image";
 
-const NFTCard = ({nft}) => {
+const NFTCard = ({ nft }) => {
+  return (
+    <div className="bg-blue-500">
+      <div style={{ width: "100px", height: "100px", position: "relative" }}>
+        <Image
+          src={`https://berry2.relayx.com/${nft.berry}`}
+          alt={nft.name}
+          layout="fill"
+        />
+      </div>
 
-return (
-    <div className='bg-blue-500'>
-        {/* <p>{nft.name}</p> */}
-        <td>{nft.name}</td>
+      <p>{nft.name}</p>
     </div>
-)
-}
+  );
+};
 
-export default NFTCard
+export default NFTCard;

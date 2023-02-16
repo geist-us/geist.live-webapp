@@ -1,12 +1,10 @@
-const path = require('path')
-const webpack = require('webpack');
+const path = require("path");
+const webpack = require("webpack");
 
 /** @type {import('next').NextConfig} */
 
 // Remove this if you're not using Fullcalendar features
-const withTM = require('next-transpile-modules')([
-
-])
+const withTM = require("next-transpile-modules")([]);
 
 module.exports = withTM({
   trailingSlash: true,
@@ -14,27 +12,27 @@ module.exports = withTM({
   experimental: {
     esmExternals: false,
     jsconfigPaths: true, // enables it for both jsconfig.json and tsconfig.json
-    appDir: false
+    appDir: false,
   },
-  webpack: config => {
+  webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      apexcharts: path.resolve(__dirname, './node_modules/apexcharts-clevision')
-    }
+      apexcharts: path.resolve(
+        __dirname,
+        "./node_modules/apexcharts-clevision"
+      ),
+    };
 
     config.plugins.push(
       new webpack.ProvidePlugin({
-          process: 'process/browser',
-          Buffer: ['buffer', 'Buffer'],
-      }),
-  );
+        process: "process/browser",
+        Buffer: ["buffer", "Buffer"],
+      })
+    );
 
-    return config
+    return config;
   },
   images: {
-    
-    loader: "custom",
-    loaderFile: "./loader.ts",
-  }
-
-})
+    domains: ["berry2.relayx.com"],
+  },
+});
