@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { PanelLayout } from "../components";
+import { PanelLayout, NFTCard } from "../components";
 
 export default function Collectibles() {
   console.log("collectibles");
@@ -50,15 +50,11 @@ export default function Collectibles() {
   return (
     <PanelLayout>
       <p>Collectibles</p>
-      <ul
-      //   style="
-      // text-align: center;
-      // "
-      >
+      <div className="bg-red-500">
         {mintedCollections?.map((mintedCollection) => (
-          <li key={mintedCollection.location}>{mintedCollection.name}</li>
+          <NFTCard key={mintedCollection.location} nft={mintedCollection} />
         ))}
-      </ul>
+      </div>
     </PanelLayout>
   );
 }
@@ -67,6 +63,8 @@ export default function Collectibles() {
 - get the collections ✅
 - show collectibles in a list  ✅
 - remove false mints ✅
+- create NFTCard component ✅
+- display NFTs in a grid
 - Show a sillhoute of the collectibles
 - if logged in, show which collectibles you have
 - show which ones you don't have as silhouettes

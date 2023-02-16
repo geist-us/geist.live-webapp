@@ -7,6 +7,7 @@ import React, {
   useState,
 } from "react";
 import { lsTest, useLocalStorage } from "../utils/storage";
+import axios from "axios";
 
 // export interface RelaySignResult {
 //   algorithm: 'bitcoin-signed-message';
@@ -87,6 +88,7 @@ const RelayProvider = (props) => {
   const [relayOne, setRelayOne] = useState();
   const [relayOtc, setRelayOtc] = useState();
   const [runOwner, setRunOwner] = useLocalStorage(runOwnerStorageKey);
+  const [geistNFTs, setGeistNFTs] = useState([]);
 
   const [ready, setReady] = useState(false);
 
@@ -117,11 +119,16 @@ const RelayProvider = (props) => {
     const token = await relayOne.authBeta();
 
     if (token && !token.error) {
-      setRelayToken(token)
+      setRelayToken(token);
       const payloadBase64 = token.split(".")[0]; // Token structure: "payloadBase64.signature"
       const { paymail: returnedPaymail } = JSON.parse(atob(payloadBase64));
       setRelayPaymail(returnedPaymail);
       const owner = await relayOne?.alpha.run.getOwner();
+      const userBalances = await axios.get(
+        `https://staging-backend.relayx.com/api/user/balance2/${owner}`
+      );
+
+      setGeistNFTs(userBalances.data.data.collectibles);
       setRunOwner(owner);
     } else {
       throw new Error(
@@ -171,7 +178,7 @@ const RelayProvider = (props) => {
       ready,
       isApp,
       runOwner,
-      relayToken
+      relayToken,
     }),
     [
       relayOne,
@@ -184,7 +191,7 @@ const RelayProvider = (props) => {
       ready,
       isApp,
       runOwner,
-      relayToken
+      relayToken,
     ]
   );
 
@@ -206,5 +213,5 @@ export { RelayProvider, useRelay };
 //
 
 const paymailStorageKey = "askbitcoin__RelayProvider_paymail";
-const relayTokenStorageKey = "peafowl_excellence_RelayProvider_authToken"
+const relayTokenStorageKey = "peafowl_excellence_RelayProvider_authToken";
 const runOwnerStorageKey = "askbitcoin__RelayProvider_runOwner";

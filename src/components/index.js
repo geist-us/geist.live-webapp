@@ -24,3 +24,4 @@ export { default as Header } from "./Header";
 export { default as UserProfileCard } from "./UserProfileCard";
 export { default as WalletProviderPopUp } from "./WalletProviderPopUp";
 export { default as SplashScreen } from "./SplashScreen";
+export { default as NFTCard } from "./NFTCard";
