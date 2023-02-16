@@ -49,8 +49,10 @@ export default function Collectibles() {
 
   return (
     <PanelLayout>
-      <p>Collectibles</p>
-      <div className="bg-red-200 flex flex-wrap">
+      <div className="font-bold text-4xl mb-2 mt-2 text-center">
+        <h1>The GEIST Catalogue</h1>
+      </div>
+      <div className="bg-gray-200 flex flex-wrap">
         {mintedCollections?.map((mintedCollection) => (
           <NFTCard key={mintedCollection.location} nft={mintedCollection} />
         ))}
