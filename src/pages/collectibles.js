@@ -6,9 +6,10 @@ export default function Collectibles() {
   console.log("collectibles");
 
   const misprints = [
-    "254cc23144c64cc9f4c249146ce7c52dc13a76a114fb8eb69347aa5e3e7689bf_o2",
-    "5ab72c164de3514848a086e99975be1508124db704f273a616baa42cf820a1dc_o2",
-    "28b6e0569c6093f8a65962a2d9d66220d610594a5bc39c2021ace64a4bcd3dfe_o2",
+    "254cc23144c64cc9f4c249146ce7c52dc13a76a114fb8eb69347aa5e3e7689bf_o2", //misprint
+    "5ab72c164de3514848a086e99975be1508124db704f273a616baa42cf820a1dc_o2", //misprint
+    "28b6e0569c6093f8a65962a2d9d66220d610594a5bc39c2021ace64a4bcd3dfe_o2", //misprint
+    "3da59cdf5391d0d09e10a8dcb6fb6fb1220ea74b168a7f1770743dd9eebd35fb_o2" //artist contract
   ];
 
   // const [totalMints, setTotalMints] = useState(0);
@@ -49,7 +50,7 @@ export default function Collectibles() {
 
   return (
     <PanelLayout>
-      <div className="font-bold text-4xl mb-2 mt-2 text-center">
+      <div className="font-bold text-4xl m-4 text-center">
         <h1>The GEIST Catalogue</h1>
       </div>
       <div className="bg-gray-200 flex flex-wrap">
