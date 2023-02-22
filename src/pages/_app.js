@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Club Geist</title>
+        <title>👻 GEIST CLUB 👻</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
         strategy="beforeInteractive"
       />
       <Script src="https://unpkg.com/@hastearcade/web/dist/umd/index.js" strategy="beforeInteractive"
- />
+      />
       <ThemeProvider
         attribute="class"
         enableSystem={false}

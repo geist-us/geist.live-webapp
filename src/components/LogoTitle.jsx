@@ -4,7 +4,7 @@ import { useTheme } from "next-themes"
 const LogoTitle = () => {
   const { theme} = useTheme()
   return <>
-  {theme === "light" ? <img className='w-[120px]' src="/images/club-geist-high-resolution-logo-color-on-transparent-background.svg" /> : <img className='w-[120px]' src="/images/club-geist-high-resolution-logo-white-on-transparent-background.svg"/>}</>
+  {theme === "light" ? <img className='w-[240px]' src="/images/geist_logo.webp" /> : <img className='w-[240px]' src="/images/geist_logo.webp"/>}</>
 }
 
 export default LogoTitle
