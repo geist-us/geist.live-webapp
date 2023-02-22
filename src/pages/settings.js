@@ -8,7 +8,6 @@ import {
   WalletProviderPopUp,
 } from "../components";
 import { useRelay } from "../context/RelayContext";
-import TuningPanel from "../components/TuningPanel";
 import { useBitcoin } from "../context/BitcoinContext";
 
 export default function Settings() {
@@ -39,12 +38,6 @@ export default function Settings() {
     <PanelLayout>
       <div className="mx-auto max-w-xl col-span-12 lg:col-span-6 min-h-screen flex flex-col ">
         <div className="mt-7  p-4  ">
-          <div className="bg-gray-100 dark:bg-gray-600 p-5 flex flex-col cursor-pointer my-4 rounded-lg">
-            <p className="text-base font-semibold mb-2 text-gray-700 dark:text-white">
-              Tuning Panel
-            </p>
-            <TuningPanel />
-          </div>
           {/* <div
             onClick={() => setWalletPopupOpen(true)}
             className="bg-gray-100 dark:bg-gray-600 p-5 flex items-center h-[78px] cursor-pointer my-4 rounded-lg"

@@ -3,6 +3,7 @@ import VideoDashboard from "../components/VideoDashboard";
 import { useAPI } from "../hooks/useAPI";
 import { useTuning } from "../context/TuningContext";
 import { useRouter } from 'next/router'
+import Collectibles from './collectibles'
 import { useAuth } from "src/hooks/useAuth";
 import { useTokenMeetLiveWebsocket } from "src/hooks/useWebsocket";
 
@@ -42,7 +43,7 @@ const Index = () => {
       const hasteClient = root.haste.HasteClient.build()
 
       const details = hasteClient.getTokenDetails();
-  
+
       console.log({details})
     }
 
@@ -53,12 +54,13 @@ const Index = () => {
 
 
   return (
-    <VideoDashboard
-      data={questions}
-      recent={recent_questions}
-      error={error}
-      loading={questions_loading || recent_loading}
-    />
+    // <VideoDashboard
+    //   data={questions}
+    //   recent={recent_questions}
+    //   error={error}
+    //   loading={questions_loading || recent_loading}
+    // />
+    <Collectibles />
   );
 };
 
