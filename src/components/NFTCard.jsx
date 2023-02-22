@@ -38,11 +38,20 @@ const NFTCard = ({ nft }) => {
         )}
       </div>
 
-      <div className="px-6 py-6 a">
-        <div className="font-bold text-xl text-gray-700 mb-2 hover:text-blue-300"><a href={`https://relayx.com/market/${nft.origin}`} target="_blank" rel="noopener noreferrer">{nft.name}</a></div>
+      <div className="px-6 py-6">
+        <div className="font-bold text-xl text-gray-700 mb-2 hover:text-blue-300">
+        <a 
+        href={`https://relayx.com/market/${nft.origin}`} 
+        target="_blank" 
+        rel="noopener noreferrer">
+          <h1>
+            {nft.name}
+          </h1>
+        </a>
+        </div>
         <p className="text-blue-700 text-base">{nft.description}</p>
       </div>
-      <div className="px-6 pt-2 pb-2">
+      <div className="px-6 pt-2 pb-2 sticky top-[100vh]">
         <span className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
           Editions: {" "}
           {nft.total === undefined ? "Not issued" : nft.total}
