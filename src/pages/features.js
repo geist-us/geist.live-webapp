@@ -82,15 +82,14 @@ export default function Features() {
           <div className="bg-gray-100 dark:bg-gray-600 lg:rounded-lg mt-7 py-8 px-7 w-full flex flex-col lg:flex-row justify-between">
             <div>
               <p className="mt-4 text-2xl font-bold text-gray-900 dark:text-white text-center lg:text-left">
-                Flutter Features
+                GEIST Features
               </p>
               <p className="text-gray-700 dark:text-gray-300 text-base mt-2 text-center lg:text-left">
-                You buy it, we will build it. Contribute to our next big feature
-                release and who knows, you might even get a reward 🙃.
+                Support GEIST by donating directly into the label wallet.
               </p>
             </div>
           </div>
-          <div className="px-4 my-4 ">
+          <div className="px-1 my-4 ">
             <div className="flex">
               <Link href="/features">
                 <a className="bg-gray-100 dark:bg-gray-600 font-semibold text-gray-900 dark:text-white text-sm py-2 px-3 mr-2 cursor-pointer rounded-md whitespace-nowrap">
@@ -104,30 +103,30 @@ export default function Features() {
               </Link> */}
             </div>
           </div>
-          <div className="px-4 lg:px-0 grid mt-4 lg:mt-7 gap-4 grid-cols-12">
-            <div className="col-span-12 lg:col-span-6 xl:col-span-4 bg-gray-100 dark:bg-gray-600 rounded-lg p-4 w-full relative flex flex-col">
+          <div className="px-4 lg:px-0 grid mt-4 lg:mt-7 gap-4 grid-cols-1">
+            <div className="col-span-1 lg:col-span-1 xl:col-span-4 bg-gray-100 dark:bg-gray-600 rounded-lg p-4 w-full relative flex flex-col">
               <p className="text-xs text-blue-500 mb-1.5">🔦 Spotlight</p>
               <p className="text-lg font-semibold text-gray-900 dark:text-white">
-                Give me money
+                GEIST Wallet Balance
               </p>
               <p className="text-sm text-gray-900 opacity-70 dark:text-white mt-2">
-                This will help strenghthen my balance sheet
+                This is the wallet balance for the GEIST label. You can donate!
               </p>
               <div className="grow" />
               <div className="mt-3">
                 <div className="flex items-center">
                   <p className="text-sm text-gray-900 dark:text-white">
-                    Progress
+                    Balance:
                   </p>
                   <div className="grow" />
                   <p className="text-xs text-gray-900 dark:text-white">
-                    {balance.toFixed(2)}/21 BSV
+                    {balance.toFixed(2)}/1000 BSV
                   </p>
                 </div>
                 <div className="relative w-full bg-green-900 bg-opacity-50  h-2 rounded-lg">
                   <div
                     className="h-2 absolute top-0 left-0 bg-green-500 rounded-lg"
-                    style={{ width: `${(balance * 100) / 21}%` }} // dynamically render based on address balance
+                    style={{ width: `${(balance * 100) / 1000}%` }} // dynamically render based on address balance
                   />
                 </div>
               </div>
