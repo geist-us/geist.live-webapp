@@ -1,6 +1,6 @@
 - [] Change homepage to display GEIST logo/About Us
 
-- [] Create Meet page for video chat
+- [x] Create Meet page for video chat
 
 - [] Implement silhouettes for Collectibles page
 
