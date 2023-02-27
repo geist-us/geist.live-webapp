@@ -409,16 +409,21 @@ const Dashboard = ({ data, recent, error, loading }: any) => {
         <div id="tokenmeet-video-container"></div>
       )}
       {typeof accessNFT === 'undefined' && (
-        <div className="px-4 mt-2">
+        <div className="px-4 mt-8 mr-auto ml-auto font-semibold italic">
           <div className="flex my-6">
             <div className="flex">
-              <p>Checking your wallet for Geist Membership Card NFT....</p>
+              <h1>Checking your wallet for Geist Membership Card NFT....</h1>
             </div>
           </div>
         </div>
       )}
       {!accessNFT && typeof accessNFT !== 'undefined' && (
-        <p><button className="button button-lg">< a target="_blank" rel="noreferrer" href={`https://relayx.com/market/${geistToken}`}>Geist Club Members Only!! Buy a card here</a></button></p>
+        <h1><button className="button bg-red-300 font-semibold italic text-gray-700 mr-auto ml-auto mt-8">
+          < a target="_blank" 
+          rel="noreferrer" 
+          href={`https://relayx.com/market/${geistToken}`}>
+            Geist Club Members Only!! Buy a card here!
+          </a></button></h1>
       )}
       
 

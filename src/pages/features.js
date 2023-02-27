@@ -14,7 +14,7 @@ export default function Features() {
   const router = useRouter();
   const [amount, setAmount] = useState(0.218);
   const [balance, setBalance] = useState(0);
-  const featureAddress = "16oWWdfgsoFXKfWo27vDHDVEaTUshqFr1h";
+  const featureAddress = "16HmWbtsXxjtQNRcYpeRA39JR1qPyoxVBx";
 
   useEffect(() => {
     //get address balance
