@@ -404,7 +404,7 @@ const Dashboard = ({ data, recent, error, loading }: any) => {
       <Script src={'https://8x8.vc/vpaas-magic-cookie-30f799d005ea4007aaa7afbf1a14cdcf/external_api.js'} />
 
     <ThreeColumnLayout>
-      <div className="col-span-12 lg:col-span-6 min-h-screen">
+      <div className="col-span-12 lg:col-span-6 min-h-screen ml-auto mr-auto">
       {accessNFT && (
         <div id="tokenmeet-video-container"></div>
       )}
@@ -412,18 +412,18 @@ const Dashboard = ({ data, recent, error, loading }: any) => {
         <div className="px-4 mt-8 mr-auto ml-auto font-semibold italic">
           <div className="flex my-6">
             <div className="flex">
-              <h1>Checking your wallet for Geist Membership Card NFT....</h1>
+              <p>Checking your wallet for Geist Membership Card NFT....</p>
             </div>
           </div>
         </div>
       )}
       {!accessNFT && typeof accessNFT !== 'undefined' && (
-        <h1><button className="button bg-red-300 font-semibold italic text-gray-700 mr-auto ml-auto mt-8">
+        <p><button className="button bg-red-300 font-semibold italic text-gray-700 mr-auto ml-auto mt-8">
           < a target="_blank" 
           rel="noreferrer" 
           href={`https://relayx.com/market/${geistToken}`}>
             Geist Club Members Only!! Buy a card here!
-          </a></button></h1>
+          </a></button></p>
       )}
       
 

@@ -85,7 +85,12 @@ export default function Features() {
                 GEIST Features
               </p>
               <p className="text-gray-700 dark:text-gray-300 text-base mt-2 text-center lg:text-left">
-                Support GEIST by donating directly into the label wallet.
+                Support GEIST by donating directly into the <a
+                  href={`https://whatsonchain.com/address/${featureAddress}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <u>label wallet.</u></a>
               </p>
             </div>
           </div>
