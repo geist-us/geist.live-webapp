@@ -3,7 +3,6 @@ import axios from "axios";
 import { PanelLayout, NFTCard } from "../components";
 
 export default function Collectibles() {
-  console.log("collectibles");
 
   const misprints = [
     "254cc23144c64cc9f4c249146ce7c52dc13a76a114fb8eb69347aa5e3e7689bf_o2", //misprint
@@ -25,6 +24,7 @@ export default function Collectibles() {
       );
 
       const totalMints = userProfile.data.data.minted;
+      console.log("data is: ", userProfile.data);
 
       const pages = Math.ceil(totalMints / 10);
 
