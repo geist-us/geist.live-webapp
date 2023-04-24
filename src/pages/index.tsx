@@ -16,26 +16,26 @@ import axios from "axios";
 
 const Index = () => {
 
-  const { query } = useRouter()
-  const { startTimestamp } = useTuning();
-  let {
-    data,
-    error,
-    refresh,
-    loading: questions_loading,
-  } = useAPI(`/questions?start_timestamp=${startTimestamp}`);
-  let { data: recent, loading: recent_loading } = useAPI(
-    "/recent/questions?limit=100"
-  );
+  // const { query } = useRouter()
+  // const { startTimestamp } = useTuning();
+  // let {
+  //   data,
+  //   error,
+  //   refresh,
+  //   loading: questions_loading,
+  // } = useAPI(`/questions?start_timestamp=${startTimestamp}`);
+  // let { data: recent, loading: recent_loading } = useAPI(
+  //   "/recent/questions?limit=100"
+  // );
 
-  let questions = data?.questions;
-  let boosted_tx = questions?.map((q: any) => q.tx_id);
-  let recent_questions = recent?.questions;
-  recent_questions = recent_questions?.filter(
-    (q: any) => !boosted_tx?.includes(q.tx_id)
-  );
+  // let questions = data?.questions;
+  // let boosted_tx = questions?.map((q: any) => q.tx_id);
+  // let recent_questions = recent?.questions;
+  // recent_questions = recent_questions?.filter(
+  //   (q: any) => !boosted_tx?.includes(q.tx_id)
+  // );
 
-  console.log("QUERY", query)
+  // console.log("QUERY", query)
 
   useEffect(() => {
 

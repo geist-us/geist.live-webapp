@@ -39,7 +39,7 @@ export default function Collectibles() {
         const filteredMints = data.data.mints.filter(
           (mint) => !misprints.includes(mint.location)
         );
-        console.log("mintedCollections", mintedCollections);
+        console.log("filteredMints", filteredMints);
         filteredGeistCollections.push(...filteredMints);
         // console.log("mintedCollections", mintedCollections);
       }
