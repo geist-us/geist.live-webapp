@@ -1,9 +1,20 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const NFTCard = ({ nft }) => {
+
+  const router = useRouter();
+
+  const navigate = (e) => {
+    e.stopPropagation();
+    router.push(`/collectiblespage/${nft.origin}`);
+    return
+  } 
+
   return (
-    <div className="pt-6 pb-6 max-w-xs rounded overflow-hidden shadow-lg ml-auto mr-auto hover:bg-slate-100">
+    <div onClick={navigate} 
+    className="pt-6 pb-6 max-w-xs rounded overflow-hidden shadow-lg ml-auto mr-auto hover:bg-slate-100">
       <div
         style={{
           display: "flex",
@@ -69,5 +80,7 @@ const NFTCard = ({ nft }) => {
     </div>
   );
 };
+
+
 
 export default NFTCard;
