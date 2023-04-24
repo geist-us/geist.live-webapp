@@ -8,7 +8,7 @@ const NFTCard = ({ nft }) => {
 
   const navigate = (e) => {
     e.stopPropagation();
-    router.push(`/collectiblespage/${nft.origin}`);
+    router.push(`/collectibles/${nft.origin}`);
     return
   } 
 
