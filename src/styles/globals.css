@@ -10,3 +10,7 @@
     background-color: #085af6;
   }
 }
+
+h1, h2, h3, p, a {
+  font-family: 'Jost', sans-serif;
+}

@@ -54,12 +54,6 @@ const Index = () => {
 
 
   return (
-    // <VideoDashboard
-    //   data={questions}
-    //   recent={recent_questions}
-    //   error={error}
-    //   loading={questions_loading || recent_loading}
-    // />
     <Collectibles />
   );
 };

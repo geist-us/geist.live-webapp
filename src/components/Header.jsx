@@ -28,10 +28,10 @@ const Header = () => {
   }
   return (
     <>
-    <div className="fixed w-screen -top-16 left-0 z-50 lg:bg-gray-200 lg:dark:bg-gray-800 lg:opacity-90 backdrop-blur-md ">
-        <div className="h-16 bg-red-500 " />
+    <div className="fixed w-screen -top-16 left-0 z-50 p-4 bg-gradient-to-r from-gray-300 to-blue-500 lg:dark:bg-gray-800 lg:opacity-90 backdrop-blur-md ">
+        <div className="h-16"/>
         <div className="px-4 lg:px-7 h-[50px] lg:h-16 relative flex justify-between items-center">
-          <div className="lg:hidden w-24 flex items-center">
+          <div className="w-24 flex items-center">
             <div className='cursor-pointer' onClick={openDrawer}>
               {authenticated ? <UserIcon src={avatar} size={36} /> : 
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -57,7 +57,7 @@ const Header = () => {
               </div>
             </Link> */}
           </div>
-          <div className='w-full flex items-center justify-center sm:justify-start'>
+          <div className='w-full flex place-content-center justify-center sm:justify-start'>
             <Link href="/">
                 <a>
                   <LogoTitle/>

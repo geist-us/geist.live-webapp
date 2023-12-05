@@ -3,13 +3,13 @@ import Image from "next/image";
 
 const NFTCard = ({ nft }) => {
   return (
-    <div className="pt-6 pb-6 max-w-xs rounded overflow-hidden shadow-lg ml-auto mr-auto hover:bg-slate-100">
+    <div className="mt-4 mb-4 pt-6 pb-6 max-w-sm p-4 border-2 border-black rounded-xl overflow-hidden shadow-xl bg-blue-100 ml-auto mr-auto hover:bg-blue-300">
       <div
         style={{
           display: "flex",
           flexDirection: "column",
           height: "auto",
-          maxHeight: 320, //343
+          maxHeight: 360, //343
           position: "relative",
         }}
       >
@@ -39,7 +39,7 @@ const NFTCard = ({ nft }) => {
       </div>
 
       <div className="px-6 py-6">
-        <div className="font-bold text-xl text-gray-700 mb-2 hover:text-blue-300">
+        <div className="font-bold text-xl text-gray-700 mb-2 hover:text-blue-600">
         <a 
         href={`https://relayx.com/market/${nft.origin}`} 
         target="_blank" 
@@ -56,7 +56,7 @@ const NFTCard = ({ nft }) => {
           Editions: {" "}
           {nft.total === undefined ? "Not issued" : nft.total}
         </span>
-        <span className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:bg-blue-300">
+        <span className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:bg-blue-600">
           <a href={`https://relayx.com/token/${nft.origin}/owners`} target="_blank" rel="noopener noreferrer">
             Owners: {`${nft.owners}`}
           </a>

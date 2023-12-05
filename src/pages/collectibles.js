@@ -49,16 +49,23 @@ export default function Collectibles() {
   }, []);
 
   return (
+    <div className="relative place-content-center w-screen ml-auto mr-auto">
+    <div className="h-8"/>
     <PanelLayout>
       <div className="font-bold text-4xl m-4 text-center">
-        <h1>The GEIST Catalogue</h1>
+        {/* <h1>The GEIST Catalogue</h1> */}
+        <h3>geist is a record label owned by its artists and token holders</h3>
+        <h3>this is an experiment in distribution and novel payment models.</h3>
+        <h3>this catalogue has been airdropped to all holders of a geist club card.</h3>
+        
       </div>
-      <div className="bg-gray-200 flex flex-wrap">
+      <div className="bg-transparent flex flex-wrap">
         {mintedCollections?.map((mintedCollection) => (
           <NFTCard key={mintedCollection.location} nft={mintedCollection} />
         ))}
       </div>
     </PanelLayout>
+    </div>
   );
 }
 

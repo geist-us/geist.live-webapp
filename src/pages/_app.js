@@ -31,6 +31,9 @@ function MyApp({ Component, pageProps }) {
         <title>👻 GEIST CLUB 👻</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+        </style>
       </Head>
       <Script
         src="https://one.relayx.io/relayone.js"
