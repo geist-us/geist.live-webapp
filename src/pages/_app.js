@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+        @import url(&lsquo;https://fonts.googleapis.com/css2?family=Jost&display=swap&lsquo;);
         </style>
       </Head>
       <Script
