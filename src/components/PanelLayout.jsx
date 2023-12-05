@@ -6,7 +6,7 @@ import SideBarNotifications from './SideBarNotifications'
 
 const PanelLayout = ({ children }) => {
   return (
-    <div className='bg-gray-300 dark:bg-gray-700'>
+    <div className='bg-gray-600 dark:bg-gray-700'>
       <Header/>
       <div className='h-16'/>
       <div className='grid grid-cols-12'>
